@@ -1,12 +1,11 @@
 
 :root {
-  --pink: rgb(255, 0, 255);
-  --blue: rgb(0, 255, 255);
-  --gradient: linear-gradient(45deg, var(--pink), var(--blue));
-  --light: rgb(200, 200, 200);
-  --dark: rgb(30, 30, 30);
-  --glass: rgba(255, 255, 255, .03);
-
+  --pink: oklch(70.17% 0.322 328.36);
+  --blue: oklch(90.54% 0.15455001106436891 194.76894793196382);
+  --gradient: linear-gradient(to right in srgb, var(--pink), var(--blue), var(--pink));
+  --light: oklch(94.91% 0 0);
+  --dark: oklch(25.2% 0 0);
+  --glass: oklch(100% 0 0 0.3);
   --size: clamp(10rem, 1rem + 40vmin, 30rem);
   --gap: calc(var(--size) / 14);
   --duration: 60s;
@@ -57,11 +56,11 @@ blockquote, q {
   quotes: none;
 }
 
-  blockquote:before, blockquote:after,
-  q:before, q:after {
-    content: '';
-    content: none;
-  }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
 
 table {
   border-collapse: collapse;
@@ -70,6 +69,49 @@ table {
 
 .container {
   width: 100%
+}
+
+body {
+  background-color: rgb(0 0 0);
+  font-family: Poppins,sans-serif;
+  font-size: 1rem;
+}
+
+#srOnly {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  position: absolute;
+  display: none;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px
+}
+
+h1 span, h2, h3,
+h4, h5, h6 {
+  --bg-size: 400%;
+  background: var(--gradient) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move-bg 15s infinite linear;
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
 }
 
 @media (min-width:640px) {
@@ -103,29 +145,16 @@ table {
   }
 }
 
-body {
-  background-color: rgb(0 0 0);
-  font-family: Poppins,sans-serif;
-  font-size: 1rem;
-}
-
-#srOnly {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
-  position: absolute;
-  display: none;
-  white-space: nowrap;
-  height: 1px;
-  width: 1px
-}
-
-@keyframes scroll-x {
-  from {
-    transform: translateX(var(--scroll-start));
+@media (prefers-reduced-motion: no-preference) {
+  
+  h1 span, h2, h3,
+  h4, h5, h6 {
+    animation: move-bg 8s linear infinite;
   }
-
-  to {
-    transform: translateX(var(--scroll-end));
+  
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
   }
 }
