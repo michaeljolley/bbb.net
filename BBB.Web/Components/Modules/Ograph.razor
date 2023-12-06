@@ -1,0 +1,35 @@
+﻿@using System.Web
+@inject NavigationManager MyNavigationManager
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="@MyNavigationManager.Uri" />
+<meta property="og:title" content="@Title" />
+<meta property="og:description" content="@Description" />
+<meta property="og:image" content="@OgraphImageUrl" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@@michaeljolley" />
+<meta property="twitter:creator" content="@@michaeljolley" />
+<meta property="twitter:title" content="@Title"/>
+<meta property="twitter:description" content="@Description" />
+<meta property="twitter:image" content="@OgraphImageUrl" />
+
+@code {
+
+  [Parameter]
+  public string Title { get; set; }
+  [Parameter]
+  public string Description { get; set; }
+
+  private string OgraphImageUrl
+  {
+    get
+    {
+      string encodedTitle = HttpUtility.UrlEncode(Title);
+
+      return $"https://res.cloudinary.com/dk3rdh3yo/image/upload/g_south_west,x_100,y_300,w_1000,c_fit,co_white,l_text:Roboto_64_bold:{encodedTitle}/website-assets/1200x700.png";
+    }
+  }
+}

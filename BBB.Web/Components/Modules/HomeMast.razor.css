@@ -1,0 +1,36 @@
+﻿section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://res.cloudinary.com/dk3rdh3yo/image/upload/c_scale,f_auto,e_grayscale,o_20/v1687460581/website-assets/mast-bbb.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  height: 14rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--light);
+}
+
+h1 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: var(--light);
+  margin-top: 0.5rem;
+}
+
+@media (min-width:768px) /* md */ {
+  section {
+    height: 20rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+}

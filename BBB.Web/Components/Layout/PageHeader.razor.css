@@ -1,0 +1,9 @@
+﻿header {
+  padding: 2rem 0rem; 
+}
+
+@media (min-width:768px) /* md */ {
+  header {
+    padding: 2rem 3rem;
+  }
+}

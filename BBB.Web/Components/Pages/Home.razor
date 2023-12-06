@@ -1,0 +1,20 @@
+﻿@page "/"
+
+
+<HeadContent>
+  <title>@Title</title>
+  <meta name="title" content="@Title" />
+  <meta name="description" content="@Description" />
+  <Ograph 
+    Title="@Title" 
+    Description="@Description" />
+</HeadContent>
+
+<HomeMast/>
+<Proof/>
+
+
+@code {
+  const string Title = "Build with Michael Jolley, the Bald Bearded Builder";
+  const string Description = "Welcome to the home of Michael Jolley, also known as the bald, bearded, builder. Here you'll find all Michael's content curated for easier viewing.";
+}
