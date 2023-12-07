@@ -1,10 +1,13 @@
-﻿
-<a href={`/blog/${post.slug}/`}>
-  <div class="img"></div>
-  <section>
-    <div class="summary">
-      <h5>{title}</h5>
-      <p>{summary}</p>
-    </div>
-  </section>
+﻿@code {
+
+  [Parameter]
+  public BlogPost Post { get; set; }
+
+}
+
+<a 
+  href="/blog/1/"
+   style="background-image: url('@Post.ImageUrl')">
+  <h3>@Post.Title</h3>
+  <p>@Post.Summary</p>
 </a>

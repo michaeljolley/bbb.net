@@ -10,7 +10,7 @@ section {
   margin: auto;
   max-width: 100vw;
   background: var(--glass);
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   border: 1px solid var(--dark);
   border-left: 0;
   border-right: 0;

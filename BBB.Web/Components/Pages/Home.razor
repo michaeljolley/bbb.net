@@ -1,8 +1,18 @@
 ﻿@page "/"
+@inject ContentStore ContentStore
 
 @code {
   const string Title = "Build with Michael Jolley, the Bald Bearded Builder";
   const string Description = "Welcome to the home of Michael Jolley, also known as the bald, bearded, builder. Here you'll find all Michael's content curated for easier viewing.";
+
+  List<BlogPost> blogPosts = new List<BlogPost>();
+
+  protected async override Task OnInitializedAsync()
+  {
+    blogPosts = await ContentStore.GetPostsAsync();
+
+    
+  }
 }
 
 <HeadContent>
@@ -16,3 +26,5 @@
 
 <HomeMast/>
 <Proof/>
+<p>@blogPosts.Count</p>
+<CardList BlogPosts="blogPosts" />

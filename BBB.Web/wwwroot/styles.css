@@ -3,6 +3,7 @@
   --pink: oklch(70.17% 0.322 328.36);
   --blue: oklch(90.54% 0.15455001106436891 194.76894793196382);
   --gradient: linear-gradient(to right in srgb, var(--pink), var(--blue), var(--pink));
+  --gradient-gray: linear-gradient(to right in srgb, oklch(100% 0 0 0.5), oklch(100% 0 0 0.2), oklch(100% 0 0 0.5));
   --light: oklch(94.91% 0 0);
   --dark: oklch(25.2% 0 0);
   --glass: oklch(100% 0 0 0.3);
@@ -68,7 +69,7 @@ table {
 }
 
 .container {
-  width: 100%
+  width: 100%;
 }
 
 body {
@@ -111,6 +112,16 @@ h4, h5, h6 {
 @keyframes move-bg {
   to {
     background-position: var(--bg-size) 0;
+  }
+}
+
+@keyframes steam {
+  from {
+    --a: 0deg;
+  }
+
+  to {
+    --a: 360deg;
   }
 }
 

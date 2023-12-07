@@ -1,0 +1,35 @@
+﻿section {
+  margin: 1.5rem;
+}
+
+
+section .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+
+@media (min-width:640px) {
+  section .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width:768px) {
+  section .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width:1024px) {
+  section .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:1280px) {
+  section .container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

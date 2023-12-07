@@ -1,0 +1,16 @@
+﻿
+@code {
+
+  [Parameter]
+  public List<BlogPost> BlogPosts { get; set; }
+
+}
+
+<section>
+  <div class="container">
+    @foreach (var post in BlogPosts) 
+    {
+      <Card Post="post" />
+    }
+  </div>
+</section>

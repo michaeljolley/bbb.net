@@ -25,7 +25,4 @@ public class BlogPost
   [YamlMember(Alias = "summary")]
   public required string Summary { get; set; }
 
-  [YamlMember(Alias = "featured")]
-  public bool Featured { get; set; } = false;
-
 }
